@@ -1,30 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../../api/axios";
+import requests from "../../api/requests";
 import "./Banner.css";
 
 function Banner() {
-  // ! Continue Here
-  function truncate(string, n) {}
+  const [movie, setMovie] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(requests.fetchNetflixOriginals);
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      );
+      return request;
+    }
+    fetchData();
+  }, []);
+
+  console.log(movie);
+
+  function truncate(string, n) {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  }
 
   return (
     <header
       className="banner"
       style={{
-        backgroundImage: `url('https://cdnb.artstation.com/p/assets/images/images/054/747/843/large/joshua-smith-photo08-10-2022-8-04-01-pm.jpg?1665276364')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
         backgroundSize: "cover",
-        backgroundPosition: "top center",
+        backgroundPosition: "center center",
       }}
     >
       <div className="banner__contents">
-        <h1 className="banner__title">Movie Name</h1>
+        <h1 className="banner__title">
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
         <h1 className="banner__description">
-          This is a test descriptionThis is a test description This is a test
-          description This is a test description This is a test description This
-          is a test description This is a test description This is a test
-          description This is a test description
+          {truncate(`${movie?.overview}`, 150)}
         </h1>
       </div>
       <div className="banner--fadeBottom" />
