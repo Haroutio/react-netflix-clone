@@ -165,4 +165,5 @@ yarn-error.log*
 # firebase files
 .firebase
 firebase.json
+firebase.js
 .firebaserc
