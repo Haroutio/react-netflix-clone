@@ -1,9 +1,10 @@
-h2 {
-    font-weight: 400;
-}
-
 .row {
     color: white;
+    margin-left: 20px;
+}
+
+.row>h2 {
+    font-weight: 400;
     margin-left: 20px;
 }
 

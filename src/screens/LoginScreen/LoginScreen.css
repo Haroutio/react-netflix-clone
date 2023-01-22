@@ -44,6 +44,8 @@
     padding: 20px;
     position: absolute;
     top: 30%;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
     right: 0;
     text-align: center;
@@ -67,6 +69,10 @@
     margin-bottom: 20px;
 }
 
+.loginScreen__input {
+    margin: 20px;
+}
+
 .loginScreen__input>form>input {
     padding: 15px;
     outline-width: 0;
@@ -77,10 +83,11 @@
 }
 
 .loginScreen__getStarted {
-    margin: 0;
     padding: 17px 20px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
     background-color: #e50914;
     border: none;
+    font-weight: 500;
+    cursor: pointer;
 }
