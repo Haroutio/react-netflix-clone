@@ -1,5 +1,5 @@
 import "./ProfileScreen.css";
-import { Nav } from "../../components";
+import { Nav, Plans } from "../../components";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectUser } from "../../features/userSlice";
@@ -20,7 +20,8 @@ function ProfileScreen() {
           <div className="profileScreen__details">
             <h2>{user.email}</h2>
             <div className="profileScreen__plans">
-              Current Plan:
+              <h3>Plans</h3>
+              <Plans />
               <button
                 onClick={() => {
                   auth.signOut();

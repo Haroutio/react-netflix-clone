@@ -19,7 +19,6 @@ export const userSlice = createSlice({
 export const { login, logout } = userSlice.actions;
 
 export const selectUser = (state) => {
-  console.log(state);
   return state.user.user;
 };
 

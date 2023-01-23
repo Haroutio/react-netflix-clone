@@ -22,6 +22,7 @@
 
 .profileScreen__info {
     display: flex;
+    font-size: 24px;
 }
 
 .profileScreen__info>img {
@@ -36,8 +37,29 @@
 
 .profileScreen__details>h2 {
     font-weight: 400;
+    background-color: gray;
+    padding: 15px;
+    font-size: 15px;
+    padding-left: 20px;
 }
 
-.profileScreen__plans {}
+.profileScreen__plans {
+    margin-top: 20px;
+}
 
-.profileScreen__signOut {}
+.profileScreen__plans>h3 {
+    border-bottom: 1px solid #282c2d;
+    padding-bottom: 10px;
+}
+
+.profileScreen__signOut {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 5%;
+    width: 100%;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+}
